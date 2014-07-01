@@ -1,4 +1,4 @@
-ocaml-osc [![Build status](https://travis-ci.org/johnelse/ocaml-osc.png?branch=master)](https://travis-ci.org/johnelse/ocaml-osc)
+ocaml-osc [![Build status](https://travis-ci.org/siddharthv/ocaml-osc.png?branch=coveralls)](https://travis-ci.org/siddharthv/ocaml-osc?branch=coveralls)
 =========
 
 Pure OCaml implementation of the
@@ -9,3 +9,4 @@ Dependencies:
 * [lwt](http://ocsigen.org/lwt/) (optional)
 * [ocplib-endian](https://github.com/OCamlPro/ocplib-endian)
 * [oUnit](http://ounit.forge.ocamlcore.org/)
+
