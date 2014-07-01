@@ -11,6 +11,10 @@ UNIX_FLAG=--enable-unix
 
 TESTS_FLAG=--enable-tests
 
+FLAGS=-use-ocamlfind
+TESTS_PKGS=oUnit
+OVERAGE_TAGS=package\(bisect\),syntax\(camlp4o\),syntax\(bisect_pp\)
+
 NAME=osc
 J=4
 
@@ -45,3 +49,8 @@ test: build
 
 test-interop-sclang: build
 	./test-interop-sclang.sh
+
+coverage:
+	ocamlbuild $(FLAGS) -pkgs $(TESTS_PKGS) -tags $(COVERAGE_TAGS) foo.byte bar.byte
+	BISECT_FILE=_build/coverage ./foo.byte
+	BISECT_FILE=_build/coverage ./bar.byte

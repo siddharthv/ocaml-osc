@@ -31,6 +31,20 @@ then
 fi
 
 eval `opam config -env`
+
+#install patched bisect library since it is not updated on opam yet$
+echo '** INSTALLING PATCHED BISECT LIBRARY'
+curl -L http://bisect.sagotch.fr | tar -xzf -
+cd Bisect
+chmod +x configure
+./configure
+cat Makefile.config
+make all
+sudo make install # ./configure set PATH_OCAML_PREFIX=/usr instead of$
+                  # using .opam directory, so we need sudo$
+cd ..
 make
+echo '** TEST CODE COVERAGE'$
 make test
 make doc
+make coverage
